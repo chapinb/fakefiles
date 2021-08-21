@@ -1,0 +1,21 @@
+---
+plan:
+  People:
+    On-boarding:
+      "{RAND_NUM}":
+        _meta:
+          min_int: 1
+          max_int: 9999
+          padding: 4
+          num_instances: 157
+
+        _filenames:
+          -
+            name: offer_letter.pdf
+            template: templates/offer_letter.pdf
+          -
+            name: ssn_scan.pdf
+            template: templates/ssn_scan.pdf
+          -
+            name: direct_deposit_info.xlsx
+            template: templates/direct_deposit_info.xlsx

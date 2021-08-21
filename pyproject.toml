@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fakefiles"
+version = "0.1.0"
+description = "Generate fake files based on configuration"
+authors = ["Chapin Bryce <dev@chapinb.com>"]
+license = "MIT License, (c) 2021 Chapin Bryce"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+"ruamel.yaml" = "^0.17.10"
+
+[tool.poetry.dev-dependencies]
+coverage = "^5.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

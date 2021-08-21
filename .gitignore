@@ -1,0 +1,6 @@
+fileshare/
+*.pyc
+*.7z
+*.log
+.venv/
+.vscode/

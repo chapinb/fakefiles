@@ -1,0 +1,75 @@
+---
+
+# The plan key holds information about the plan to generate the folder
+# structure, file names, and what templates to use for each file.
+plan:
+  # finance is the base folder name
+  finance:
+    # Within finance, we will create a folder named "FY-{YEAR}" where
+    # {YEAR} is replaced with each year between
+    # _meta.min_year and _meta.max_year
+    "FY-{YEAR}":
+      _meta:
+        min_year: 2019
+        max_year: 2021
+      # Within each FY-{YEAR} folder we will generate two files, specified
+      # in the _filenames key, each with their name pattern and the templates
+      # to use when creating the file.
+      _filenames:
+        -
+          # A file name pattern to use
+          name: "bank_accounts_{RAND_NUM}.xlsx"
+          # Template names are relative to the config file path
+          template: "templates/bank_accounts.xlsx"
+          _meta:
+            min_int: 1
+            max_int: 9999
+            padding: 4
+            num_instances: 1
+        -
+          name: "invoices_{RAND_NUM}.zip"
+          template: "templates/invoices.zip"
+          _meta:
+            min_int: 1
+            max_int: 9999
+            padding: 4
+            num_instances: 5
+        -
+          name: "board_presentation_{INCREMENT_NUMBER}.pdf"
+          template: "templates/presentation.pdf"
+          _meta:
+            min_number: 2  # Minimum number of files to create
+            max_number: 3  # Maximum number of files to create
+      "{MONTH}":
+        _meta:
+          min_month: 1
+          max_month: 12
+          padding: 2
+        # Within each FY-{YEAR} folder we will generate two files, specified
+        # in the _filenames key, each with their name pattern and the templates
+        # to use when creating the file.
+        _filenames:
+          -
+            name: "expenses_{RAND_NUM}.xlsx"
+            template: "templates/expenses.xlsx"
+            _meta:
+              min_int: 1
+              max_int: 9999
+              padding: 4
+              num_instances: 1
+          -
+            name: "sales_{RAND_NUM}.xlsx"
+            template: "templates/sales.xlsx"
+            _meta:
+              min_int: 1
+              max_int: 9999
+              padding: 4
+              num_instances: 2
+          -
+            name: "{RAND_NUM}-receipts.zip"
+            template: "templates/receipts.zip"
+            _meta:
+              min_int: 1
+              max_int: 9999
+              padding: 4
+              num_instances: 1
